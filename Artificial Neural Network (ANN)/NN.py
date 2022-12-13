@@ -275,7 +275,6 @@ def linear_backward(dZ, cache):
     # Number of examples
     m = A_prev.shape[1] 
     
-    
     # Compute the gradients
     dW = (1/m) * np.dot(dZ, A_prev.T)                 
     db = (1/m) * np.sum(dZ, axis=1, keepdims=True)
