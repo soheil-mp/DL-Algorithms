@@ -355,10 +355,11 @@ class NeuralNetwork():
         
         return parameters  
     
-    #######################
+    #############################
     #    ACTIVATION FUNCTION    #
-    #######################
+    #############################
     
+    # Function for sigmoid activation
     def sigmoid(self, Z):
         """
         Implements the sigmoid activation in numpy
@@ -376,6 +377,7 @@ class NeuralNetwork():
         
         return A, cache
 
+    # Function for relu activation
     def relu(self, Z):
         """
         Implement the RELU function.
@@ -395,7 +397,7 @@ class NeuralNetwork():
         cache = Z 
         return A, cache
 
-
+    # Function for sigmoid backward propagation
     def relu_backward(self, dA, cache):
         """
         Implement the backward propagation for a single RELU unit.
@@ -418,6 +420,7 @@ class NeuralNetwork():
         
         return dZ
 
+    # Function for sigmoid backward propagation
     def sigmoid_backward(self, dA, cache):
         """
         Implement the backward propagation for a single SIGMOID unit.
@@ -439,8 +442,19 @@ class NeuralNetwork():
         
         return dZ
 
+    ############################
+    #    TRAINING THE MODEL    #
+    ############################    
+    
+    # Function for training the model
+    def train(self, X, Y, layers_dims, learning_rate = 0.0075, num_iterations = 3000, print_cost=False):
+        pass 
     
     
+        
+        
+
+ 
 # Initialize the neural network
 neural_network = NeuralNetwork()
     
@@ -507,56 +521,3 @@ print ("W2 = "+ str(parameters["W2"]))
 print ("b2 = "+ str(parameters["b2"]))      
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    # # Constructor function
-    # def __init__(self):
-        
-    #     # Seed the random number generator
-    #     np.random.seed(1)
-        
-    #     # Weights for the 3x2 matrix
-    #     self.synaptic_weights = 2 * np.random.random((3, 1)) - 1
-        
-    # # Sigmoid function
-    # def sigmoid(self, x):
-    #     return 1 / (1 + np.exp(-x))
-    
-    # # Sigmoid derivative
-    # def sigmoid_derivative(self, x):
-    #     return x * (1 - x)
-    
-    # # Train the neural network
-    # def train(self, training_inputs, training_outputs, training_iterations):
-    #     for iteration in range(training_iterations):
-    #         # Pass the training set through the network
-    #         output = self.think(training_inputs)
-            
-    #         # Calculate the error
-    #         error = training_outputs - output
-            
-    #         # Multiply the error by the input and again by the gradient of the sigmoid curve
-    #         adjustments = np.dot(training_inputs.T, error * self.sigmoid_derivative(output))
-            
-    #         # Adjust the weights
-    #         self.synaptic_weights += adjustments
-    
-    # # The neural network thinks
-    # def think(self, inputs):
-    #     # Pass inputs through the neural network
-    #     inputs = inputs.astype(float)
-    #     output = self.sigmoid(np.dot(inputs, self.synaptic_weights))
-        
-    #     return output
