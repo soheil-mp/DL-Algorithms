@@ -449,10 +449,6 @@ class NeuralNetwork():
     # Function for training the model
     def train(self, X, Y, layers_dims, learning_rate = 0.0075, num_iterations = 3000, print_cost=False):
         pass 
-    
-    
-        
-        
 
  
 # Initialize the neural network
@@ -519,5 +515,3 @@ print ("W1 = "+ str(parameters["W1"]))
 print ("b1 = "+ str(parameters["b1"]))
 print ("W2 = "+ str(parameters["W2"]))
 print ("b2 = "+ str(parameters["b2"]))      
-    
-    
